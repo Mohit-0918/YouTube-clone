@@ -3,7 +3,9 @@ import Navbar from "./components/Navbar";
 import { ThemeProvider, createGlobalStyle,styled } from 'styled-components';
 import { darkTheme, lightTheme } from "./utils/Theme";
 import { useState } from "react";
-
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+import Video from "./pages/Video";
+import Home from "./pages/Home";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -31,13 +33,22 @@ function App() {
     <ThemeProvider theme={darkMode?darkTheme:lightTheme}>
     <Container>
       <GlobalStyle />
+      <BrowserRouter>
       <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
       <Main>
         <Navbar />
         <Wrapper>
-          video cards
+          <Routes>
+            <Route path="/">
+              <Route index element ={<Home/>}/>
+              <Route path="video">
+                <Route path=":id" element={<Video/>}/>
+              </Route>
+            </Route>
+          </Routes>
         </Wrapper>
       </Main>
+      </BrowserRouter>
     </Container>
     </ThemeProvider>
     
