@@ -105,7 +105,9 @@ const Menu=({darkMode,setDarkMode})=>{
                 </Item><H/>
                 <Login>
                     Sign in to login to your Account 
+                    <Link to="signin">
                     <Button><AccountCircleOutlinedIcon />Sign In</Button>
+                    </Link>
                 </Login>
 
                 <H/>
@@ -139,7 +141,7 @@ const Menu=({darkMode,setDarkMode})=>{
                     Help
                 </Item><Item onClick={()=>setDarkMode(!darkMode)}>
                     <SettingsBrightnessOutlinedIcon/>
-                    Light Mode
+                    {darkMode ? "light" : "Dark"} Mode
                     </Item>
             </Wrapper>
         </Container>

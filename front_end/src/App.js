@@ -6,6 +6,7 @@ import { useState } from "react";
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Video from "./pages/Video";
 import Home from "./pages/Home";
+import SingIn from "./pages/SingIn";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -41,6 +42,7 @@ function App() {
           <Routes>
             <Route path="/">
               <Route index element ={<Home/>}/>
+              <Route path="signin" element={<SingIn/>}/>
               <Route path="video">
                 <Route path=":id" element={<Video/>}/>
               </Route>

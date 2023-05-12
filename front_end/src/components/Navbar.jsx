@@ -35,6 +35,7 @@ color: ${({ theme }) => theme.text};
 
 const Input =styled.input`
 border: none;
+background:transparent;
 background_color:transparent;
 `;
 const Button = styled.button`
